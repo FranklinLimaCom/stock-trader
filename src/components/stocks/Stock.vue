@@ -17,7 +17,11 @@
         </div>
 
         <div class="float-right">
-          <button @click="buyStock" :disabled="quantity <= 0 || !Number.isInteger(Number(quantity))" class="btn btn-light">Buy</button>
+          <button
+            @click="buyStock"
+            :disabled="quantity <= 0 || !Number.isInteger(Number(quantity))"
+            class="btn btn-light"
+          >Buy</button>
         </div>
       </div>
     </div>
@@ -25,7 +29,6 @@
 </template>
 
 <script>
-
 export default {
   props: ["stock"],
   data() {
@@ -40,12 +43,11 @@ export default {
         stockPrice: this.stock.price,
         quantity: this.quantity
       };
-      console.log(order);      
+      console.log(order);
       this.quantity = 0;
     }
   }
 };
 </script>
-
 
 
