@@ -6,6 +6,7 @@
 
 <script>
 import Stock from "./Stock.vue";
+import "../../animate.css"
 
 export default {
   components: {

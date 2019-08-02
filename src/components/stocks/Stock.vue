@@ -1,11 +1,11 @@
 <template>
-  <div class="col-4">
+  <div class="col-md-4">
     <div class="card text-white bg-success mb-4">
       <div class="card-header">
         {{ stock.name }}
         <small>(Price: {{ stock.price }})</small>
       </div>
-      <div class="card-body">
+      <div class="card-body bg-white">
         <div class="float-left">
           <input
             v-model="quantity"
@@ -20,7 +20,7 @@
           <button
             @click="buyStock"
             :disabled="quantity <= 0 || !Number.isInteger(Number(quantity))"
-            class="btn btn-light"
+            class="btn btn-success"
           >Buy</button>
         </div>
       </div>
@@ -44,6 +44,7 @@ export default {
         quantity: this.quantity
       };
       console.log(order);
+      this.$store.dispatch.buyStock
       this.quantity = 0;
     }
   }
